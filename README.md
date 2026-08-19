@@ -1,75 +1,109 @@
-# React + TypeScript + Vite
+# 🎬 Show Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive TV show discovery web application built with **React, TypeScript, Vite, and Tailwind CSS**.
 
-Currently, two official plugins are available:
+Show Explorer allows users to search and discover TV shows, explore detailed information, filter shows by genre, and save their favorite shows for later.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌐 Live Demo
 
-## React Compiler
+**[Visit Show Explorer](https://show-explorer-snowy.vercel.app/)**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- 🔍 Search TV shows
+- 🎭 Filter shows by genre
+- ⭐ Display show ratings
+- 🖼️ Show poster images
+- 📄 View detailed information about shows
+- ❤️ Add shows to Favorites
+- 💔 Remove shows from Favorites
+- 💾 Persist Favorites using browser LocalStorage
+- 🔢 Display the number of saved Favorites in the navbar
+- 📱 Responsive design for desktop and mobile
+- ⚡ Fast production build with Vite
+- 🧭 Client-side navigation with React Router
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Frontend
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Data
 
-```
+- TVMaze API
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### State & Storage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- React Context API
+- React Hooks
+- Browser LocalStorage
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Deployment & Version Control
 
-```
+- Git
+- GitHub
+- Vercel
+
+## 🔌 API
+
+Show data is provided by the **TVMaze API**.
+
+https://www.tvmaze.com/api
+
+The application fetches show information dynamically from the API, including:
+
+- Show name
+- Poster
+- Rating
+- Genres
+- Language
+- Status
+- Premiered date
+- Runtime
+- Summary
+
+## 📂 Project Structure
+
+```text
+show-explorer/
+│
+├── public/
+│   ├── favicon.svg
+│   └── icons.svg
+│
+├── src/
+│   │
+│   ├── components/
+│   │   ├── Navbar.tsx
+│   │   ├── ShowCard.tsx
+│   │   └── ShowCardSkeleton.tsx
+│   │
+│   ├── context/
+│   │   └── FavoritesContext.tsx
+│   │
+│   ├── pages/
+│   │   ├── Home.tsx
+│   │   ├── Discover.tsx
+│   │   ├── Favorites.tsx
+│   │   ├── ShowDetails.tsx
+│   │   └── About.tsx
+│   │
+│   ├── utils/
+│   │   └── favorites.ts
+│   │
+│   ├── App.tsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.tsx
+│
+├── index.html
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+├── vercel.json
+└── README.md
