@@ -73,8 +73,7 @@ The application fetches show information dynamically from the API, including:
 show-explorer/
 │
 ├── public/
-│   ├── favicon.svg
-│   └── icons.svg
+│   └── favicon.svg
 │
 ├── src/
 │   │
